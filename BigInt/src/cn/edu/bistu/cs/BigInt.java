@@ -1,8 +1,17 @@
-
+/**
+ * 
+ */
 package cn.edu.bistu.cs;
 
+/**
+ * @author chenruoyu
+ *
+ */
 public interface BigInt {
 	
+	public enum Sign {
+		POSITIVE, NEGATIVE;
+	};
 	/**
 	 * 高精度整数加法，将整数bInt与当前整数相加，
 	 * 并将结果作为一个新的BitInt类型整数返回，
@@ -58,11 +67,18 @@ public interface BigInt {
 	public BigInt sub(int bInt);
 	
 	
+	public boolean isPositive();
+	
+	public Sign getSign();
+	
+	public void setSign(Sign sign);
+	
+	public Byte[] getValue();
+	
 	@Override
 	/**
 	 * 覆盖Object对象的toString方法，将超长整数值输出
 	 * @return
 	 */
 	String toString();
-	
 }
